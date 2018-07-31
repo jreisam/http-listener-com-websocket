@@ -17,12 +17,14 @@ public class WebSocketHttpHandshakeInterceptor implements HandshakeInterceptor {
         if (request instanceof ServletServerHttpRequest) {
             ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) request;
             HttpSession session = servletRequest.getServletRequest().getSession();
-            attributes.put("sessionId", session.getId());
+            attributes.put("sessao", session.getId());
         }
         return true;
     }
 
+    @Override
     public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
                                Exception ex) {
+        System.out.println("recebeu msg ws");
     }
 }

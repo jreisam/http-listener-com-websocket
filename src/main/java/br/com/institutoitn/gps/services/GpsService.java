@@ -1,6 +1,6 @@
 package br.com.institutoitn.gps.services;
 
-import br.com.institutoitn.gps.models.TeltonikaFMB920;
+import br.com.institutoitn.gps.persistence.models.DeviceRecords;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -14,22 +14,11 @@ public class GpsService {
         this.webSocketService = webSocketService;
     }
 
-/*    @Async
-    public CompletableFuture<gps> EnviarWSGPS( gps gpsAtual) throws InterruptedException{
-        CompletableFuture<gps> retornoGpsAtual = CompletableFuture.completedFuture(gpsAtual);
-
-        Thread.sleep(2000L);
-        webSocketAssistsDAO.SendMsgTracking(gpsAtual);
-
-        return retornoGpsAtual;
-    }*/
-
     @Async
-    public CompletableFuture<TeltonikaFMB920> EnviarGPSAsync(TeltonikaFMB920 teltonikaFMB920) throws InterruptedException{
-        CompletableFuture<TeltonikaFMB920> retornoGpsAtual = CompletableFuture.completedFuture(teltonikaFMB920);
+    public CompletableFuture<DeviceRecords> EnviarGPSAsync(DeviceRecords deviceRecords) throws InterruptedException{
+        CompletableFuture<DeviceRecords> retornoGpsAtual = CompletableFuture.completedFuture(deviceRecords);
 
-//        Thread.sleep(2000L);
-        webSocketService.SendGPS(teltonikaFMB920);
+        webSocketService.SendGPS(deviceRecords);
 
         return retornoGpsAtual;
     }

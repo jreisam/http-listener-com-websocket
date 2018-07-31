@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="gpsrecords@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="gpsrecords">
+      <ObjectId>87129</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12292</ObjectId>
+    </database>
+    <database id="4" parent="1" name="observatorio">
+      <ObjectId>16394</ObjectId>
+    </database>
+    <database id="5" parent="1" name="barsystem">
+      <ObjectId>44060</ObjectId>
+    </database>
+    <role id="6" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="12" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-07-31.15:22:28.642</IntrospectionTimestamp>
+      <IntrospectionStateNumber>47422</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="13" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="information_schema">
+      <ObjectId>12002</ObjectId>
+    </schema>
+    <sequence id="18" parent="12" name="hibernate_sequence">
+      <ObjectId>87272</ObjectId>
+      <StateNumber>47417</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="19" parent="12" name="device_records">
+      <ObjectId>87279</ObjectId>
+      <StateNumber>47422</StateNumber>
+    </table>
+    <column id="20" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47422</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="21" parent="19" name="created_date">
+      <Position>2</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>47422</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="22" parent="19" name="imei">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>47422</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="23" parent="19" name="lat">
+      <Position>4</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47422</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="24" parent="19" name="lng">
+      <Position>5</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47422</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="25" parent="19" name="veid">
+      <Position>6</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>47422</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="26" parent="19" name="device_records_pkey">
+      <ObjectId>87282</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="19" name="device_records_pkey">
+      <ObjectId>87283</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>device_records_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
