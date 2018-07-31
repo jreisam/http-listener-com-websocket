@@ -1,6 +1,7 @@
 package br.com.institutoitn.gps.rest;
 
 import br.com.institutoitn.gps.exceptions.DeviceRecordNotFoundException;
+import br.com.institutoitn.gps.models.BetweenDates;
 import br.com.institutoitn.gps.persistence.DeviceRecordsRepository;
 import br.com.institutoitn.gps.persistence.models.DeviceRecords;
 import br.com.institutoitn.gps.services.GpsService;
@@ -89,6 +90,16 @@ public class DeviceRecordsRestController {
 		return ResponseEntity.ok("Gps enviado: " +deviceRecords.getImei() + ".");
 	}
 
-	
+    @PostMapping("/records/findBetween")
+    public ResponseEntity<Object> findBetween(@RequestBody BetweenDates betweenDates) {
+
+
+        return ResponseEntity.ok(deviceRecordsRepository.findAllByImeiOrVeidOrCreatedDateBetweenOrderByCreatedDate(betweenDates.getImei(),
+                betweenDates.getVeid(),
+                betweenDates.getDataini(),
+                betweenDates.getDatafim()));
+
+    }
+
     //endregion
 }
