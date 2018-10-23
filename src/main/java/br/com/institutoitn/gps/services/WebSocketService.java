@@ -26,12 +26,14 @@ public class WebSocketService {
     public void SendGPS(DeviceRecords deviceRecords){
         // mensurar o tempo de criação e envio do message
         long start = System.currentTimeMillis();
-
+        // TODO: pegar o vehicle_id referente ao IMEI do GPS, e incluir, ou incluir ao persistir
+        deviceRecords.setVeid((long)1);
         webSocketMessaging.convertAndSend("/monitoramento", deviceRecords);
         // out
         logger.info("GPS IMEI: " + deviceRecords.getImei());
-        logger.info("LAT  --> " + deviceRecords.getLat());
-        logger.info("LONG --> " + deviceRecords.getLng());
+        logger.info("VEHICLE_ID --> " + deviceRecords.getVeid());
+        logger.info("LAT  --> " + deviceRecords.getLatitude());
+        logger.info("LONG --> " + deviceRecords.getLongitude());
         logger.info("Tempo do envio (ws): " + (System.currentTimeMillis() - start));
      }
 

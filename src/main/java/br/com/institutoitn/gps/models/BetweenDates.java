@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -15,12 +18,16 @@ public class BetweenDates {
 //    private EMessageType type;
     private Long imei;
     private Long veid;
+
+//    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+//    @Temporal(TemporalType.DATE)
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
-    @JsonProperty(value = "data inicial")
+    @JsonProperty(value = "dataini")
     @NotNull
     private Date dataini;
+
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
-    @JsonProperty(value = "data final")
+    @JsonProperty(value = "datafim")
     @NotNull
     private Date datafim;
 }

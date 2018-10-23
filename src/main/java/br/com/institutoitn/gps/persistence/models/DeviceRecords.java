@@ -22,8 +22,8 @@ public class DeviceRecords {
 
 	private Long imei;
     private Long veid;
-	private double lat;
-	private double lng;
+	private double latitude;
+	private double longitude;
 
 
 	public DeviceRecords() {
@@ -34,8 +34,8 @@ public class DeviceRecords {
 		super();
 		this.id = id;
 		this.imei = imei;
-		this.lat = lat;
-		this.lng = lng;
+		this.latitude = lat;
+		this.longitude = lng;
 		this.veid = veid;
 		this.createdDate = createdDate;
 	}

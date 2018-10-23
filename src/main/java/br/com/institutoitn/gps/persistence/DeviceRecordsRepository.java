@@ -10,5 +10,11 @@ import java.util.Date;
 @Repository
 public interface DeviceRecordsRepository extends JpaRepository<DeviceRecords, Long> {
 // possíveis overrides
-    Collection<DeviceRecords> findAllByImeiOrVeidOrCreatedDateBetweenOrderByCreatedDate(Long imei, Long veid, Date dataini, Date datafim);
+    Collection<DeviceRecords> findAllByVeidAndCreatedDateBetween(Long veid, Date dataini, Date datafim);
+
+    Collection<DeviceRecords> findAllByVeidAndImeiAndCreatedDateBetween(Long veid, Long imei, Date dataini, Date datafim);
+
+    Collection<DeviceRecords> findAllByVeid(Long veid);
+
+    Collection<DeviceRecords> findFirstByVeidOrderByCreatedDateDesc(Long veid);
 }
